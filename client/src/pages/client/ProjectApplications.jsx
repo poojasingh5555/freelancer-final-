@@ -13,7 +13,7 @@ const ProjectApplications = () => {
 
   const fetchApplications = async () => {
     try {
-      const response = await axios.get("http://localhost:6001/fetch-applications");
+      const response = await axios.get("https://freelancer-final.onrender.com");
       console.log(response.data); 
 
       const clientApplications = response.data.filter(
@@ -32,7 +32,7 @@ const ProjectApplications = () => {
 
   const handleApprove = async (id) => {
     try {
-      await axios.get(`http://localhost:6001/approve-application/${id}`);
+      await axios.get(`https://freelancer-final.onrender.com${id}`);
       alert("Application approved");
       fetchApplications();
     } catch (error) {
@@ -42,7 +42,7 @@ const ProjectApplications = () => {
 
   const handleReject = async (id) => {
     try {
-      await axios.get(`http://localhost:6001/reject-application/${id}`);
+      await axios.get(`https://freelancer-final.onrender.com${id}`);
       alert("Application rejected!!");
       fetchApplications();
     } catch (error) {
