@@ -31,7 +31,7 @@ app.use(
 );
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "https://freelancer-final.onrender.com");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -39,10 +39,10 @@ app.use((req, res, next) => {
 });
 
 const server = http.createServer(app);
-
+0
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", 
+    origin: "https://freelancer-final.onrender.com", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   },
