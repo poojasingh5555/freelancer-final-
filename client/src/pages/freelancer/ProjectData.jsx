@@ -43,7 +43,7 @@ const ProjectData = () => {
 
   const fetchProject = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:6001/fetch-project/${id}`);
+      const response = await axios.get(`https://freelancer-final.onrender.com${id}`);
       setProject(response.data);
       setProjectId(response.data._id);
       setClientId(response.data.clientId);
@@ -59,7 +59,7 @@ const ProjectData = () => {
     }
 
     try {
-      await axios.post("http://localhost:6001/make-bid", {
+      await axios.post("https://freelancer-final.onrender.com", {
         clientId,
         freelancerId,
         projectId,
@@ -85,7 +85,7 @@ const ProjectData = () => {
     }
 
     try {
-      await axios.post("http://localhost:6001/submit-project", {
+      await axios.post("https://freelancer-final.onrender.com", {
         clientId,
         freelancerId,
         projectId,
@@ -120,7 +120,7 @@ const ProjectData = () => {
 
   const fetchChats = async () => {
     try {
-      const response = await axios.get(`http://localhost:6001/fetch-chats/${params['id']}`);
+      const response = await axios.get(`https://freelancer-final.onrender.com${params['id']}`);
       setChats(response.data);
     } catch (err) {
       console.error("Error fetching chats:", err.response?.data || err.message);
