@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:6001");
+const socket = io("https://freelancer-final.onrender.com");
 
 const ProjectDetails = () => {
   const params = useParams();
@@ -29,7 +29,7 @@ const ProjectDetails = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:6001/fetch-project/${id}`);
+      const response = await axios.get(`https://freelancer-final.onrender.com${id}`);
       console.log(response.data);
       setProject(response.data);
       setProjectId(response.data._id);
