@@ -11,7 +11,7 @@ const MyApplications = () => {
 
   const fetchApplications = async () => {
     try {
-      const response = await axios.get("http://localhost:6001/fetch-applications");
+      const response = await axios.get("https://freelancer-final.onrender.com");
       console.log("Fetched applications:", response.data);
   
       setApplications(Array.isArray(response.data) ? response.data : []);
