@@ -7,7 +7,7 @@ export const GeneralContext = createContext();
 
 const GeneralContextProvider = ({children}) => {
 
-  const WS = 'http://localhost:6001';
+  const WS = 'https://freelancer-final-1.onrender.com';
 
   const socket = socketIoClient(WS);
 
