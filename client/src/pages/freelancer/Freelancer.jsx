@@ -23,7 +23,7 @@ const Freelancer = () => {
   }, []);
 
   const fetchUserData = async (id) => {
-    axios.get(`http://localhost:6001/fetch-freelancer/${id}`).then((response) => {
+    axios.get(`https://freelancer-final-1.onrender.com/fetch-freelancer/${id}`).then((response) => {
       console.log(response.data)
       setFreelancerData(response.data);
       if (response.data) {
@@ -37,7 +37,7 @@ const Freelancer = () => {
   };
 
   const updateUserData = async () => {
-    axios.post(`http://localhost:6001/update-freelancer`, {
+    axios.post(`https://freelancer-final-1.onrender.com/update-freelancer`, {
       freelancerId,
       updateSkills,
       description: updateDescription
@@ -48,7 +48,7 @@ const Freelancer = () => {
   };
 
   const fetchApplications = async (userId) => {
-    await axios.get('http://localhost:6001/fetch-applications').then((response) => {
+    await axios.get('https://freelancer-final-1.onrender.com/fetch-applications').then((response) => {
       setApplicationsCount(Array.isArray(response.data) ? response.data : []);
     }).catch((err) => {
       console.log(err);
